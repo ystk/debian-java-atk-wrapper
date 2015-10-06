@@ -1,0 +1,32 @@
+Source: java-atk-wrapper
+Priority: optional
+Maintainer: Debian Accessibility Team <debian-accessibility@lists.debian.org>
+Uploaders: Samuel Thibault <sthibault@debian.org>
+Build-Depends: debhelper (>= 7.0.50~), pkg-config, dh-autoreconf, libatk1.0-dev (>= 1.17.0), libglib2.0-dev, libgtk2.0-dev, default-jdk, x11-utils
+Standards-Version: 3.9.6
+Section: java
+Homepage: http://ftp.gnome.org/pub/GNOME/sources/java-atk-wrapper/
+Vcs-Browser: http://git.debian.org/?p=pkg-a11y/java-atk-wrapper.git;a=summary
+Vcs-Git: git://git.debian.org/git/pkg-a11y/java-atk-wrapper.git
+
+Package: libatk-wrapper-java
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Recommends: libatk-wrapper-java-jni
+Description: ATK implementation for Java using JNI
+ Java ATK Wrapper is an implementation of ATK which uses JNI. It
+ converts Java Swing events into ATK events, and sends these events to
+ ATK-Bridge.
+
+Package: libatk-wrapper-java-jni
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, libatk-wrapper-java (>= ${source:Version})
+Description: ATK implementation for Java using JNI (JNI bindings)
+ Java ATK Wrapper is an implementation of ATK which uses JNI. It
+ converts Java Swing events into ATK events, and sends these events to
+ ATK-Bridge.
+ .
+ This package contains the JNI bindings.

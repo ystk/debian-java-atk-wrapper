@@ -1,0 +1,24 @@
+diff --git a/configure.in b/configure.in
+index d132984..53a50d0 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -31,7 +31,6 @@ PKG_CHECK_MODULES(JAW, [
+ 	gthread-2.0
+ 	gmodule-2.0
+ 	gdk-2.0
+-	gconf-2.0
+ ])
+ 
+ ATK_BRIDGE_LIB_PATH="`pkg-config --variable=libdir gtk+-2.0`/gtk-2.0"
+diff --git a/jni/src/AtkWrapper.c b/jni/src/AtkWrapper.c
+index d69b43c..bf9989f 100644
+--- a/jni/src/AtkWrapper.c
++++ b/jni/src/AtkWrapper.c
+@@ -23,7 +23,6 @@
+ #include <gmodule.h>
+ #include <gdk/gdk.h>
+ #include <X11/Xlib.h>
+-#include <gconf/gconf-client.h>
+ #include "jawutil.h"
+ #include "jawimpl.h"
+ #include "jawtoplevel.h"

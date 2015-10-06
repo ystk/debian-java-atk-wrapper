@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+JAVACFLAGS=-source 1.5 -target 1.5
+
+%:
+	dh $@ --with autoreconf
+
+clean: clean-local
+clean-local:
+	rm -f JavaInfo.class
+
+override_dh_auto_configure:
+	JAVACFLAGS="$(JAVACFLAGS)" dh_auto_configure -- --libdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH)/jni/

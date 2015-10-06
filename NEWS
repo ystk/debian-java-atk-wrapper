@@ -1,0 +1,137 @@
+Changes in version 0.30.5
+=========================
+
+Maintainer note: while doing this release, we detected that the
+version bump on each release was not included on the master branch. So
+most of the 0.30.X JAW versions available were not reflected on
+master, but only on the branch gnome-2-30. In that sense, the
+versioning of this module was more updated on a specific branch that
+on master.
+
+This was against the usual GNOME policies, and in general, for any
+free software project using git as repository. So, from now on, the
+usual policy would be used, summarized as:
+
+ * master will include also the version bumping.
+ * specific branches will be used for developing new features or to
+   keep track of stable branches
+
+Additionally, this NEWS entry will include all the changes since
+0.29.5., beind those:
+*
+* Atk wrapping:
+   * Bug 616693: emit both the visible and showing events for combo box
+   * Bug 611256 - atk_text_get_text is not working correctly with the
+     specified end offset
+* Building:
+   * Add JAVACFLAGS option for build
+   * Bug 703358 - java-atk-wrapper can't be re-automake with automake 1.13
+   * Use -avoid-version only when target_os is cygwin
+* Mantainership:
+   * Updated doap file, both in format [1] and in content (current
+     active maintainers)
+   * Updated AUTHORS and MAINTAINERS files accordingly
+* Miscellanea
+   * Use GTK_PATH to locate libatk-bridge.so
+   * Use AT_SPI_IOR and AT_SPI_BUS instead of GConf key to check
+     enablement of accessibility
+   * Adding initial .gitignore file
+
+[1] https://mail.gnome.org/archives/release-team/2014-July/msg00045.html
+
+Contributors:
+Magdalen Berns, Leon Fan, James Page, Alejandro Piñeiro, Yaakov Selkowitz, Ke Wang,
+
+===============================
+Java ATK Wrapper version 0.29.5
+Important changes:
+	* Fix critical typo - should set NO_AT_BRIDGE to 0 instead of 1 in loadAtkBridge
+
+===============================
+Java ATK Wrapper version 0.29.4
+Important changes:
+	* Fix regression - conflict with GTK look and feel
+
+===============================
+Java ATK Wrapper version 0.29.3
+Important changes:
+	* Add non-alphanumeric key mapping
+
+===============================
+Java ATK Wrapper version 0.29.2
+Important changes:
+	* Fixed bug 606402 - Attempting to run swing applications with the JAW
+	  installed frequently causes the JRE to report a fatal runtime error
+	* Add JAW_DEBUG - Set environment JAW_DEBUG=1 to get debug messages
+
+===============================
+Java ATK Wrapper version 0.29.1
+Important changes:
+	* Added support for at-spi2(at-spi d-bus)
+
+===============================
+Java ATK Wrapper version 0.28.0
+Important changes:
+	* Fixed bug 591792 - Java application tooltips are not accessible to orca screen reader
+	* Fixed bug 595234 - The caret position will not be changed when input text with gok composer
+
+Java ATK Wrapper version 0.27.8
+===============================
+Important changes:
+	* Fixed 592987 - Java Combobox is not accessible
+	* Fixed 593130 - JTree is not accessible to at-tools
+	* Fixed 593258 - Table cell accessing issue
+	* Fixed 593131 - Java application hangs when exiting from exit menuitem with orca running
+	* Fixed 593250 - Alt+F4 sometime leads to application hang
+	* Fixed 593261 - Slider bar can not be controled by gok
+
+Java ATK Wrapper version 0.27.7
+===============================
+Important changes:
+	* Fixed d.o.o bug 10506 - java webstart applications don't run
+	* Fixed bug that window events are not emitted(bug 591665,591670)
+
+Java ATK Wrapper version 0.27.6
+===============================
+Important changes:
+	* Changed the method to resolve conflict with GTK Look And Feel.
+	  Now JAW can work with GTK l&f enabled.
+
+Java ATK Wrapper version 0.27.5
+===============================
+Important changes:
+	* Fixed bug 588879 - JVM crash when selecting text demo of SwingSet
+	* Added functionality of JDK_HOME auto-detection
+
+Java ATK Wrapper version 0.27.4
+===============================
+Important changes:
+	* Fixed bug that class files of internal classes are not packed into jar file
+	* Fixed build problem of loop variables outside C99 mode
+	* Removed functionality of JAVA_HOME auto-detection
+Java ATK Wrapper version 0.27.3
+===============================
+Important changes:
+	* Fixed several problems in build system.
+	* Resolved conflict with GTK look and feel.
+	* Added code to check whether accessibility technology is switched on
+	* Added code to get more accurate application name
+	* Added code to determine whether to load 32 or 64-bit version of atk-bridge
+	* Added functionality to auto-detect JAVA_HOME
+	* Removed dependency on gtk+-2.0
+
+Java ATK Wrapper version 0.27.2
+===============================
+Important changes:
+	* Use g_object_notify instead of g_signal_emit when
+          there is property changes, so as to fix the crash
+          bug.
+
+	* Register gnome_accessibility_module_shutdown as a
+          _atexit function after invocation of
+          gnome_accessibility_module_init, so as to fix the
+          bug that Java apps crash when exit.
+
+Java ATK Wrapper version 0.27.1
+================================
+Initial release.
